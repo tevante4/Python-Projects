@@ -66,7 +66,7 @@ def nice_mean(nice,mean,name) :
 
 
 def show_score(nice,mean,name):
-    print ("\b(), your current total:\n((), Nice) and ((), Mean)".format(name,nice,mean))
+    print ("\b{}, your current total:\n({}, Nice) and ({}, Mean)".format(name,nice,mean))
 
 
 
@@ -91,7 +91,7 @@ def win (nice,mean,name) :
     
 def lose (nice,mean,name):
     # Substitute the () wildcards with our variable values
-    print("\nAhhh too bad, game over! \n(), you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
+    print("\nAhhh too bad, game over! \n{}, you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
     # call again function and pass in our variables
     again(nice,mean,name)
 
