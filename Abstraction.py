@@ -1,6 +1,20 @@
-Python 3.10.4 (v3.10.4:9d38120e33, Mar 23 2022, 17:29:05) [Clang 13.0.0 (clang-1300.0.29.30)] on darwin
-Type "help", "copyright", "credits" or "license()" for more information.
 
-=========== RESTART: /Users/tevanteswanston/Documents/Abstraction .py ==========
-Your purchase amount:  $400
-Your purchase amount of $400 exceeded your $100 limit
+from abc import ABC, abstractmethod
+class car(ABC):
+    def paySlip(self, amount):
+        print("Your purchase amount: ", amount)
+
+    # This function is telling us to pass in an argument,
+    # but we won't tell you how or what kind of data it will be.
+    @abstractmethod
+    def payment(self, amount):
+        pass
+
+class debitCardPayment(car):
+    # Here we've defined how to implement the payment function from its parent paySlip() class.
+    def payment(self, amount):
+        print("Your purchase amount of {} exceeded your $100 limit".format(amount))
+
+obj = debitCardPayment()
+obj.paySlip("$400")
+obj.payment("$400")
